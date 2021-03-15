@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, } from '@angular/common/http';
 import { Observable, Subject, Subscription, timer } from 'rxjs';
 import { debounce, distinctUntilChanged } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-search',
@@ -26,7 +27,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     ).subscribe(value => {
       this.isSearching = false;
       if (value.length > 0) {
-        this.searchResult$ = this.http.get('https://api.github.com/search/repositories',
+        this.searchResult$ = this.http.get(environment.apiUrl + 'search/repositories',
           {
             params: new HttpParams()
               .set('q', value)

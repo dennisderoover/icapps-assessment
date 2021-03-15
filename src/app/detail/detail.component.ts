@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-detail',
@@ -20,7 +21,7 @@ export class DetailComponent implements OnInit {
   }
 
   private fetchProject(ownerName: string | null, projectName: string | null): void {
-    const url = `https://api.github.com/repos/${ownerName}/${projectName}`;
+    const url = `${environment.apiUrl}repos/${ownerName}/${projectName}`;
     this.repo$ = this.http.get(url);
   }
 
