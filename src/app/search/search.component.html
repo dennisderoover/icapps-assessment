@@ -5,7 +5,7 @@
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
 
-  <ng-container *ngIf="!isSearching && inputValue.length > 0 && searchResult$ | async as result">
+  <ng-container *ngIf="!isSearching && inputValue.length > 0 && (searchResult$ | async) as result">
   <h2>Results</h2>
     <ng-container *ngIf="result.total_count > 0; else noResult">
       <table mat-table [dataSource]="result.items" class="result-table mat-elevation-z0">
