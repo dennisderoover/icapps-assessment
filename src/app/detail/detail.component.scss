@@ -1,0 +1,33 @@
+.detail-card {
+  max-width: 400px;
+  margin: 2rem;
+
+  .properties {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    .stars,
+    .forks {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 1rem;
+
+      mat-icon {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  mat-card-content {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+.back-to-search {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}

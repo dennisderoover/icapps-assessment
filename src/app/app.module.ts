@@ -3,14 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchModule } from './search/search.module';
+import { HttpClientModule } from '@angular/common/http';
+import { DetailModule } from './detail/detail.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SearchModule,
+    DetailModule
   ],
   providers: [],
   bootstrap: [AppComponent]

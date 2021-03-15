@@ -1,0 +1,28 @@
+<div *ngIf="repo$ | async as repo">
+  <mat-card class="detail-card">
+    <mat-card-header>
+      <img mat-card-avatar [src]="repo.owner.avatar_url" alt="avatar">
+      <mat-card-title>{{ repo.name }}</mat-card-title>
+      <mat-card-subtitle>{{ repo.owner.login }}</mat-card-subtitle>
+      <div class="properties">
+        <div class="stars">
+          <mat-icon>grade</mat-icon>
+          <p>{{ repo.stargazers_count }}</p>
+        </div>
+        <div class="forks">
+          <mat-icon>alt_route</mat-icon>
+          <p>{{ repo.forks_count }}</p>
+        </div>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ repo.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button (click)="goToGitHub(repo.html_url)">See on GitHub</button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="back-to-search">
+    <button mat-stroked-button (click)="router.navigate(['search'])">Back to Search</button>
+  </div>
+</div>

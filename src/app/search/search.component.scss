@@ -1,0 +1,23 @@
+.container {
+  margin: 1rem 2rem;
+
+  .result-table {
+    width: 100%;
+
+    tr.hoverable:hover,
+    tr.hoverable:active {
+      cursor: pointer;
+      outline: none;
+      background-color: #dcdcdc;
+      transition: background-color .2s ease-in-out;
+    }
+  }
+}
+
+.align-right {
+  text-align: end;
+}
+
+.align-center {
+  text-align: center;
+}
