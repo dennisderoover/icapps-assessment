@@ -5,8 +5,8 @@
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
 
-  <h2>Results</h2>
   <ng-container *ngIf="!isSearching && inputValue.length > 0 && searchResult$ | async as result">
+  <h2>Results</h2>
     <ng-container *ngIf="result.total_count > 0; else noResult">
       <table mat-table [dataSource]="result.items" class="result-table mat-elevation-z0">
         <ng-container matColumnDef="Project Name">
@@ -33,10 +33,7 @@
       </table>
     </ng-container>
   </ng-container>
-  <mat-spinner *ngIf="inputValue.length > 0 && isSearching" diameter="40"></mat-spinner>
-  <ng-container *ngIf="inputValue.length <= 0">
-    <p>Search in the input field above</p>
-  </ng-container>
+  <mat-spinner *ngIf="inputValue.length > 0 && isSearching" diameter="70" class="center-on-screen"></mat-spinner>
 </div>
 
 <ng-template #noResult>
